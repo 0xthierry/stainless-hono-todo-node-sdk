@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["deno"],
+  "exclude": [],
+  "compilerOptions": {
+    "rootDir": "./deno",
+    "lib": ["es2020", "DOM"],
+    "paths": {
+      "todo-hono-sdk/_shims/auto/*": ["deno/_shims/auto/*-deno"],
+      "todo-hono-sdk/*": ["deno/*"],
+      "todo-hono-sdk": ["deno/index.ts"],
+    },
+    "noEmit": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "deno",
+    "pretty": true,
+    "sourceMap": true
+  }
+}
