@@ -22,7 +22,7 @@ describe('resource todos', () => {
   });
 
   test('retrieve', async () => {
-    const responsePromise = client.todos.retrieve();
+    const responsePromise = client.todos.retrieve('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -34,13 +34,13 @@ describe('resource todos', () => {
 
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.todos.retrieve({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.todos.retrieve('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       TodoHonoSDK.NotFoundError,
     );
   });
 
   test('update', async () => {
-    const responsePromise = client.todos.update();
+    const responsePromise = client.todos.update('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -52,7 +52,7 @@ describe('resource todos', () => {
 
   test('update: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.todos.update({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.todos.update('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       TodoHonoSDK.NotFoundError,
     );
   });
@@ -61,6 +61,7 @@ describe('resource todos', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.todos.update(
+        'id',
         { completed: true, description: 'description', title: 'x' },
         { path: '/_stainless_unknown_path' },
       ),
@@ -86,7 +87,7 @@ describe('resource todos', () => {
   });
 
   test('delete', async () => {
-    const responsePromise = client.todos.delete();
+    const responsePromise = client.todos.delete('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -98,13 +99,13 @@ describe('resource todos', () => {
 
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.todos.delete({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.todos.delete('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       TodoHonoSDK.NotFoundError,
     );
   });
 
   test('progress', async () => {
-    const responsePromise = client.todos.progress();
+    const responsePromise = client.todos.progress('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -116,13 +117,13 @@ describe('resource todos', () => {
 
   test('progress: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.todos.progress({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.todos.progress('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       TodoHonoSDK.NotFoundError,
     );
   });
 
   test('upload', async () => {
-    const responsePromise = client.todos.upload();
+    const responsePromise = client.todos.upload('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -134,7 +135,7 @@ describe('resource todos', () => {
 
   test('upload: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.todos.upload({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.todos.upload('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       TodoHonoSDK.NotFoundError,
     );
   });
@@ -143,6 +144,7 @@ describe('resource todos', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.todos.upload(
+        'id',
         { file: await toFile(Buffer.from('# my file contents'), 'README.md') },
         { path: '/_stainless_unknown_path' },
       ),
