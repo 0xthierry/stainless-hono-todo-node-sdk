@@ -28,9 +28,9 @@ import TodoHonoSDK from 'todo-hono-sdk';
 const client = new TodoHonoSDK();
 
 async function main() {
-  const todoCreateResponse = await client.todos.create({ completed: true, title: 'REPLACE_ME' });
+  const todo = await client.todos.create({ completed: true, title: 'REPLACE_ME' });
 
-  console.log(todoCreateResponse.id);
+  console.log(todo.id);
 }
 
 main();
@@ -48,7 +48,7 @@ const client = new TodoHonoSDK();
 
 async function main() {
   const params: TodoHonoSDK.TodoCreateParams = { completed: true, title: 'REPLACE_ME' };
-  const todoCreateResponse: TodoHonoSDK.TodoCreateResponse = await client.todos.create(params);
+  const todo: TodoHonoSDK.TodoCreateResponse = await client.todos.create(params);
 }
 
 main();
@@ -65,17 +65,15 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const todoCreateResponse = await client.todos
-    .create({ completed: true, title: 'REPLACE_ME' })
-    .catch(async (err) => {
-      if (err instanceof TodoHonoSDK.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
+  const todo = await client.todos.create({ completed: true, title: 'REPLACE_ME' }).catch(async (err) => {
+    if (err instanceof TodoHonoSDK.APIError) {
+      console.log(err.status); // 400
+      console.log(err.name); // BadRequestError
+      console.log(err.headers); // {server: 'nginx', ...}
+    } else {
+      throw err;
+    }
+  });
 }
 
 main();
@@ -152,11 +150,11 @@ const response = await client.todos.create({ completed: true, title: 'REPLACE_ME
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: todoCreateResponse, response: raw } = await client.todos
+const { data: todo, response: raw } = await client.todos
   .create({ completed: true, title: 'REPLACE_ME' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(todoCreateResponse.id);
+console.log(todo.id);
 ```
 
 ### Making custom/undocumented requests
