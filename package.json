@@ -1,6 +1,6 @@
 {
   "name": "stainless-todo-hono-sdk",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "The official TypeScript library for the Todo Hono SDK API",
   "author": "Todo Hono SDK <dev-feedback@todo-hono-sdk.com>",
   "types": "dist/index.d.ts",

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2024-09-11)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/0xthierry/stainless-hono-todo-node-sdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Features
+
+* **api:** update via SDK Studio ([#6](https://github.com/0xthierry/stainless-hono-todo-node-sdk/issues/6)) ([880e971](https://github.com/0xthierry/stainless-hono-todo-node-sdk/commit/880e9714e1ac98a7e240dc9c219b57d0b1519966))
+
 ## 0.1.0-alpha.1 (2024-09-11)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/0xthierry/stainless-hono-todo-node-sdk/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
