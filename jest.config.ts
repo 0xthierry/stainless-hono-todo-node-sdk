@@ -7,9 +7,9 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^todo-hono-sdk$': '<rootDir>/src/index.ts',
-    '^todo-hono-sdk/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
-    '^todo-hono-sdk/(.*)$': '<rootDir>/src/$1',
+    '^stainless-todo-hono-sdk$': '<rootDir>/src/index.ts',
+    '^stainless-todo-hono-sdk/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
+    '^stainless-todo-hono-sdk/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

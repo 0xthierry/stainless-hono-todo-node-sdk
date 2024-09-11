@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'todo-hono-sdk/core';
-import { Blob } from 'todo-hono-sdk/_shims/index';
-import { toFile } from 'todo-hono-sdk';
+import { multipartFormRequestOptions, createForm } from 'stainless-todo-hono-sdk/core';
+import { Blob } from 'stainless-todo-hono-sdk/_shims/index';
+import { toFile } from 'stainless-todo-hono-sdk';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

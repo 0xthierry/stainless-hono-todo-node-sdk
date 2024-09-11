@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TodoHonoSDK, { toFile } from 'todo-hono-sdk';
+import TodoHonoSDK, { toFile } from 'stainless-todo-hono-sdk';
 import { Response } from 'node-fetch';
 
 const client = new TodoHonoSDK({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });

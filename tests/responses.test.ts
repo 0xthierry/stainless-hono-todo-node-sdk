@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'todo-hono-sdk/core';
-import { Headers } from 'todo-hono-sdk/_shims/index';
+import { createResponseHeaders } from 'stainless-todo-hono-sdk/core';
+import { Headers } from 'stainless-todo-hono-sdk/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters
