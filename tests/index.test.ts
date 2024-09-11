@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TodoHonoSDK from 'todo-hono-sdk';
-import { APIUserAbortError } from 'todo-hono-sdk';
-import { Headers } from 'todo-hono-sdk/core';
+import TodoHonoSDK from 'stainless-todo-hono-sdk';
+import { APIUserAbortError } from 'stainless-todo-hono-sdk';
+import { Headers } from 'stainless-todo-hono-sdk/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

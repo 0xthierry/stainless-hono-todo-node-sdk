@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'todo-hono-sdk/uploads';
-import { File } from 'todo-hono-sdk/_shims/index';
+import { toFile, type ResponseLike } from 'stainless-todo-hono-sdk/uploads';
+import { File } from 'stainless-todo-hono-sdk/_shims/index';
 
 class MyClass {
   name: string = 'foo';

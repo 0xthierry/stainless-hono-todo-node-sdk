@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "todo-hono-sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "todo-hono-sdk/*": ["src/*"],
-      "todo-hono-sdk": ["src/index.ts"],
+      "stainless-todo-hono-sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "stainless-todo-hono-sdk/*": ["src/*"],
+      "stainless-todo-hono-sdk": ["src/index.ts"],
     },
     "noEmit": true,
 

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { TodoHonoSDK } from 'todo-hono-sdk';
+import { TodoHonoSDK } from 'stainless-todo-hono-sdk';
 
 const { stringifyQuery } = TodoHonoSDK.prototype as any;
 
