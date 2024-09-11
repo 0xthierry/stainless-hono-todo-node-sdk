@@ -34,10 +34,10 @@ export class Todos extends APIResource {
     return this._client.delete('/todos/:id', { ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
-  progress(options?: Core.RequestOptions): Core.APIPromise<void> {
+  progress(options?: Core.RequestOptions): Core.APIPromise<string> {
     return this._client.get('/todos/:id/progress', {
       ...options,
-      headers: { Accept: '*/*', ...options?.headers },
+      headers: { Accept: 'text/event-stream', ...options?.headers },
     });
   }
 
@@ -106,6 +106,8 @@ export namespace TodoListResponse {
   }
 }
 
+export type TodoProgressResponse = string;
+
 export interface TodoUploadResponse {
   id: string;
 
@@ -135,7 +137,7 @@ export interface TodoUpdateParams {
 }
 
 export interface TodoUploadParams {
-  file?: Core.Uploadable | null;
+  file?: Core.Uploadable;
 }
 
 export namespace Todos {
@@ -143,6 +145,7 @@ export namespace Todos {
   export import TodoRetrieveResponse = TodosAPI.TodoRetrieveResponse;
   export import TodoUpdateResponse = TodosAPI.TodoUpdateResponse;
   export import TodoListResponse = TodosAPI.TodoListResponse;
+  export import TodoProgressResponse = TodosAPI.TodoProgressResponse;
   export import TodoUploadResponse = TodosAPI.TodoUploadResponse;
   export import TodoCreateParams = TodosAPI.TodoCreateParams;
   export import TodoUpdateParams = TodosAPI.TodoUpdateParams;

@@ -159,6 +159,7 @@ export namespace TodoHonoSDK {
   export import TodoRetrieveResponse = API.TodoRetrieveResponse;
   export import TodoUpdateResponse = API.TodoUpdateResponse;
   export import TodoListResponse = API.TodoListResponse;
+  export import TodoProgressResponse = API.TodoProgressResponse;
   export import TodoUploadResponse = API.TodoUploadResponse;
   export import TodoCreateParams = API.TodoCreateParams;
   export import TodoUpdateParams = API.TodoUpdateParams;
