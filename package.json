@@ -1,5 +1,5 @@
 {
-  "name": "todo-hono-sdk",
+  "name": "stainless-todo-hono-sdk",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Todo Hono SDK API",
   "author": "Todo Hono SDK <dev-feedback@todo-hono-sdk.com>",
@@ -59,8 +59,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "todo-hono-sdk": ".",
-    "todo-hono-sdk/*": "./src/*"
+    "stainless-todo-hono-sdk": ".",
+    "stainless-todo-hono-sdk/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {
