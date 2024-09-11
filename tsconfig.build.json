@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "todo-hono-sdk/*": ["dist/src/*"],
-      "todo-hono-sdk": ["dist/src/index.ts"],
+      "stainless-todo-hono-sdk/*": ["dist/src/*"],
+      "stainless-todo-hono-sdk": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

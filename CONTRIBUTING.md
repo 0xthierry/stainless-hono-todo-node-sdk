@@ -55,12 +55,12 @@ cd stainless-hono-todo-node-sdk
 # With yarn
 yarn link
 cd ../my-package
-yarn link todo-hono-sdk
+yarn link stainless-todo-hono-sdk
 
 # With pnpm
 pnpm link --global
 cd ../my-package
-pnpm link -—global todo-hono-sdk
+pnpm link -—global stainless-todo-hono-sdk
 ```
 
 ## Running tests

@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'todo-hono-sdk/shims/node'
- *   import 'todo-hono-sdk/shims/web'
+ *   import 'stainless-todo-hono-sdk/shims/node'
+ *   import 'stainless-todo-hono-sdk/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */
