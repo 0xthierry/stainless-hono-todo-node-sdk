@@ -10,47 +10,60 @@ export class Todos extends APIResource {
     return this._client.post('/todos', { body, ...options });
   }
 
-  retrieve(options?: Core.RequestOptions): Core.APIPromise<TodoRetrieveResponse> {
-    return this._client.get('/todos/:id', options);
+  retrieve(id: string, options?: Core.RequestOptions): Core.APIPromise<TodoRetrieveResponse> {
+    return this._client.get(`/todos/${id}`, options);
   }
 
-  update(body?: TodoUpdateParams, options?: Core.RequestOptions): Core.APIPromise<TodoUpdateResponse>;
-  update(options?: Core.RequestOptions): Core.APIPromise<TodoUpdateResponse>;
   update(
+    id: string,
+    body?: TodoUpdateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<TodoUpdateResponse>;
+  update(id: string, options?: Core.RequestOptions): Core.APIPromise<TodoUpdateResponse>;
+  update(
+    id: string,
     body: TodoUpdateParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<TodoUpdateResponse> {
     if (isRequestOptions(body)) {
-      return this.update({}, body);
+      return this.update(id, {}, body);
     }
-    return this._client.put('/todos/:id', { body, ...options });
+    return this._client.put(`/todos/${id}`, { body, ...options });
   }
 
   list(options?: Core.RequestOptions): Core.APIPromise<TodoListResponse> {
     return this._client.get('/todos', options);
   }
 
-  delete(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.delete('/todos/:id', { ...options, headers: { Accept: '*/*', ...options?.headers } });
+  delete(id: string, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.delete(`/todos/${id}`, {
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
-  progress(options?: Core.RequestOptions): Core.APIPromise<string> {
-    return this._client.get('/todos/:id/progress', {
+  progress(id: string, options?: Core.RequestOptions): Core.APIPromise<string> {
+    return this._client.get(`/todos/${id}/progress`, {
       ...options,
       headers: { Accept: 'text/event-stream', ...options?.headers },
     });
   }
 
-  upload(body?: TodoUploadParams, options?: Core.RequestOptions): Core.APIPromise<TodoUploadResponse>;
-  upload(options?: Core.RequestOptions): Core.APIPromise<TodoUploadResponse>;
   upload(
+    id: string,
+    body?: TodoUploadParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<TodoUploadResponse>;
+  upload(id: string, options?: Core.RequestOptions): Core.APIPromise<TodoUploadResponse>;
+  upload(
+    id: string,
     body: TodoUploadParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<TodoUploadResponse> {
     if (isRequestOptions(body)) {
-      return this.upload({}, body);
+      return this.upload(id, {}, body);
     }
-    return this._client.post('/todos/:id/upload', Core.multipartFormRequestOptions({ body, ...options }));
+    return this._client.post(`/todos/${id}/upload`, Core.multipartFormRequestOptions({ body, ...options }));
   }
 }
 
