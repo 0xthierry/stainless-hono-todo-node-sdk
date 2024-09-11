@@ -135,7 +135,7 @@ export interface TodoUpdateParams {
 }
 
 export interface TodoUploadParams {
-  file?: unknown | null;
+  file?: Core.Uploadable | null;
 }
 
 export namespace Todos {
