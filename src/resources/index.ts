@@ -5,6 +5,7 @@ export {
   TodoRetrieveResponse,
   TodoUpdateResponse,
   TodoListResponse,
+  TodoProgressResponse,
   TodoUploadResponse,
   TodoCreateParams,
   TodoUpdateParams,
