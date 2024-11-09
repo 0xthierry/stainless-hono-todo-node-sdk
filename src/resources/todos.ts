@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as TodosAPI from './todos';
 
 export class Todos extends APIResource {
   create(body: TodoCreateParams, options?: Core.RequestOptions): Core.APIPromise<TodoCreateResponse> {
@@ -153,14 +152,16 @@ export interface TodoUploadParams {
   file?: Core.Uploadable;
 }
 
-export namespace Todos {
-  export import TodoCreateResponse = TodosAPI.TodoCreateResponse;
-  export import TodoRetrieveResponse = TodosAPI.TodoRetrieveResponse;
-  export import TodoUpdateResponse = TodosAPI.TodoUpdateResponse;
-  export import TodoListResponse = TodosAPI.TodoListResponse;
-  export import TodoProgressResponse = TodosAPI.TodoProgressResponse;
-  export import TodoUploadResponse = TodosAPI.TodoUploadResponse;
-  export import TodoCreateParams = TodosAPI.TodoCreateParams;
-  export import TodoUpdateParams = TodosAPI.TodoUpdateParams;
-  export import TodoUploadParams = TodosAPI.TodoUploadParams;
+export declare namespace Todos {
+  export {
+    type TodoCreateResponse as TodoCreateResponse,
+    type TodoRetrieveResponse as TodoRetrieveResponse,
+    type TodoUpdateResponse as TodoUpdateResponse,
+    type TodoListResponse as TodoListResponse,
+    type TodoProgressResponse as TodoProgressResponse,
+    type TodoUploadResponse as TodoUploadResponse,
+    type TodoCreateParams as TodoCreateParams,
+    type TodoUpdateParams as TodoUpdateParams,
+    type TodoUploadParams as TodoUploadParams,
+  };
 }
