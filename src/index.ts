@@ -1,10 +1,22 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Errors from './error';
-import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
 import * as Core from './core';
+import * as Errors from './error';
+import * as Uploads from './uploads';
 import * as API from './resources/index';
+import {
+  TodoCreateParams,
+  TodoCreateResponse,
+  TodoListResponse,
+  TodoProgressResponse,
+  TodoRetrieveResponse,
+  TodoUpdateParams,
+  TodoUpdateResponse,
+  TodoUploadParams,
+  TodoUploadResponse,
+  Todos,
+} from './resources/todos';
 
 export interface ClientOptions {
   /**
@@ -132,7 +144,7 @@ export class TodoHonoSDK extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
+export {
   TodoHonoSDKError,
   APIError,
   APIConnectionError,
@@ -146,24 +158,28 @@ export const {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} = Errors;
+} from './error';
 
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
-export namespace TodoHonoSDK {
-  export import RequestOptions = Core.RequestOptions;
+TodoHonoSDK.Todos = Todos;
 
-  export import Todos = API.Todos;
-  export import TodoCreateResponse = API.TodoCreateResponse;
-  export import TodoRetrieveResponse = API.TodoRetrieveResponse;
-  export import TodoUpdateResponse = API.TodoUpdateResponse;
-  export import TodoListResponse = API.TodoListResponse;
-  export import TodoProgressResponse = API.TodoProgressResponse;
-  export import TodoUploadResponse = API.TodoUploadResponse;
-  export import TodoCreateParams = API.TodoCreateParams;
-  export import TodoUpdateParams = API.TodoUpdateParams;
-  export import TodoUploadParams = API.TodoUploadParams;
+export declare namespace TodoHonoSDK {
+  export type RequestOptions = Core.RequestOptions;
+
+  export {
+    Todos as Todos,
+    type TodoCreateResponse as TodoCreateResponse,
+    type TodoRetrieveResponse as TodoRetrieveResponse,
+    type TodoUpdateResponse as TodoUpdateResponse,
+    type TodoListResponse as TodoListResponse,
+    type TodoProgressResponse as TodoProgressResponse,
+    type TodoUploadResponse as TodoUploadResponse,
+    type TodoCreateParams as TodoCreateParams,
+    type TodoUpdateParams as TodoUpdateParams,
+    type TodoUploadParams as TodoUploadParams,
+  };
 }
 
 export default TodoHonoSDK;
