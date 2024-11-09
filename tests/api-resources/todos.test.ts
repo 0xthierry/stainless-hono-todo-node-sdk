@@ -104,7 +104,8 @@ describe('resource todos', () => {
     );
   });
 
-  test('progress', async () => {
+  // skipped: currently no good way to test endpoints with content type text/event-stream, Prism mock server will fail
+  test.skip('progress', async () => {
     const responsePromise = client.todos.progress('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -115,7 +116,8 @@ describe('resource todos', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('progress: request options instead of params are passed correctly', async () => {
+  // skipped: currently no good way to test endpoints with content type text/event-stream, Prism mock server will fail
+  test.skip('progress: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(client.todos.progress('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       TodoHonoSDK.NotFoundError,
