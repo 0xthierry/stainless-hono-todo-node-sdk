@@ -144,27 +144,7 @@ export class TodoHonoSDK extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export {
-  TodoHonoSDKError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
 TodoHonoSDK.Todos = Todos;
-
 export declare namespace TodoHonoSDK {
   export type RequestOptions = Core.RequestOptions;
 
@@ -181,5 +161,22 @@ export declare namespace TodoHonoSDK {
     type TodoUploadParams as TodoUploadParams,
   };
 }
+
+export { toFile, fileFromPath } from 'stainless-todo-hono-sdk/uploads';
+export {
+  TodoHonoSDKError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} from 'stainless-todo-hono-sdk/error';
 
 export default TodoHonoSDK;
