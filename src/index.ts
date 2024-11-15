@@ -162,7 +162,7 @@ export declare namespace TodoHonoSDK {
   };
 }
 
-export { toFile, fileFromPath } from 'stainless-todo-hono-sdk/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   TodoHonoSDKError,
   APIError,
@@ -177,6 +177,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from 'stainless-todo-hono-sdk/error';
+} from './error';
 
 export default TodoHonoSDK;
